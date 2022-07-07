@@ -34,8 +34,8 @@
 		2DDBC4AD2876D21200432689 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC49A2876D21200432689 /* LoginView.swift */; };
 		2DDBC4AE2876D21200432689 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC49B2876D21200432689 /* RegisterView.swift */; };
 		2DDBC4B12876D22500432689 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4B02876D22500432689 /* AuthViewModel.swift */; };
-		2DDBC4B92876D34000432689 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4B72876D34000432689 /* Message.swift */; };
-		2DDBC4BA2876D34000432689 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4B82876D34000432689 /* User.swift */; };
+		2DDBC4BE2876DACC00432689 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4BC2876DACC00432689 /* Message.swift */; };
+		2DDBC4BF2876DACC00432689 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4BD2876DACC00432689 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,8 +67,8 @@
 		2DDBC49A2876D21200432689 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2DDBC49B2876D21200432689 /* RegisterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		2DDBC4B02876D22500432689 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		2DDBC4B72876D34000432689 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		2DDBC4B82876D34000432689 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2DDBC4BC2876DACC00432689 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2DDBC4BD2876DACC00432689 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 		2DDBC4692876CC6800432689 /* twitter_clone */ = {
 			isa = PBXGroup;
 			children = (
-				2DDBC4B62876D34000432689 /* Model */,
+				2DDBC4BB2876DACC00432689 /* Model */,
 				2DDBC4AF2876D22500432689 /* ViewModels */,
 				2DDBC4812876D21200432689 /* View */,
 				2DDBC4782876D20300432689 /* Utils */,
@@ -221,14 +221,14 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		2DDBC4B62876D34000432689 /* Model */ = {
+		2DDBC4BB2876DACC00432689 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				2DDBC4B72876D34000432689 /* Message.swift */,
-				2DDBC4B82876D34000432689 /* User.swift */,
+				2DDBC4BC2876DACC00432689 /* Message.swift */,
+				2DDBC4BD2876DACC00432689 /* User.swift */,
 			);
 			path = Model;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -305,14 +305,14 @@
 				2DDBC47E2876D20300432689 /* CustomSecureField.swift in Sources */,
 				2DDBC4A22876D21200432689 /* ChatBubble.swift in Sources */,
 				2DDBC4A42876D21200432689 /* SearchBar.swift in Sources */,
-				2DDBC4BA2876D34000432689 /* User.swift in Sources */,
 				2DDBC4AD2876D21200432689 /* LoginView.swift in Sources */,
 				2DDBC49C2876D21200432689 /* ContentView.swift in Sources */,
+				2DDBC4BF2876DACC00432689 /* User.swift in Sources */,
 				2DDBC4AB2876D21200432689 /* FeedView.swift in Sources */,
 				2DDBC4802876D20300432689 /* CustomTextField.swift in Sources */,
-				2DDBC4B92876D34000432689 /* Message.swift in Sources */,
 				2DDBC4A12876D21200432689 /* ChatView.swift in Sources */,
 				2DDBC4AE2876D21200432689 /* RegisterView.swift in Sources */,
+				2DDBC4BE2876DACC00432689 /* Message.swift in Sources */,
 				2DDBC4A82876D21200432689 /* FilterButtonView.swift in Sources */,
 				2DDBC4A02876D21200432689 /* ConversationsView.swift in Sources */,
 				2DDBC4A52876D21200432689 /* UserCell.swift in Sources */,
