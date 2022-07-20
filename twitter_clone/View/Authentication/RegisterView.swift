@@ -16,7 +16,7 @@ struct RegisterView: View {
     @State var selectedUIImage: UIImage?
     @State var image: Image?
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @EnvironmentObject var viewModel : AuthViewModel
+//    @EnvironmentObject var viewModel : AuthViewModel
     func loadImage() {
         guard let selectedImage = selectedUIImage else { return }
         image = Image(uiImage: selectedImage)
@@ -80,11 +80,11 @@ struct RegisterView: View {
                 .padding(.horizontal, 32)
                 
                 Button(action: {
-                    guard let image = selectedUIImage else {
-                        return
-                    }
+//                    guard let image = selectedUIImage else {
+//                        return
+//                    }
 
-                    viewModel.register(email: email, password: password, username: username, fullname: fullname, profileImage: image )
+//                    viewModel.register(email: email, password: password, username: username, fullname: fullname, profileImage: image )
                 }, label: {
                     Text("Sign Up")
                         .font(.headline)

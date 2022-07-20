@@ -36,6 +36,7 @@
 		2DDBC4B12876D22500432689 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4B02876D22500432689 /* AuthViewModel.swift */; };
 		2DDBC4BE2876DACC00432689 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4BC2876DACC00432689 /* Message.swift */; };
 		2DDBC4BF2876DACC00432689 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DDBC4BD2876DACC00432689 /* User.swift */; };
+		E33094E82888672F000A9084 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33094E72888672F000A9084 /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		2DDBC4B02876D22500432689 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		2DDBC4BC2876DACC00432689 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2DDBC4BD2876DACC00432689 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E33094E72888672F000A9084 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 			children = (
 				2DDBC4BC2876DACC00432689 /* Message.swift */,
 				2DDBC4BD2876DACC00432689 /* User.swift */,
+				E33094E72888672F000A9084 /* Error.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				2DDBC4802876D20300432689 /* CustomTextField.swift in Sources */,
 				2DDBC4A12876D21200432689 /* ChatView.swift in Sources */,
 				2DDBC4AE2876D21200432689 /* RegisterView.swift in Sources */,
+				E33094E82888672F000A9084 /* Error.swift in Sources */,
 				2DDBC4BE2876DACC00432689 /* Message.swift in Sources */,
 				2DDBC4A82876D21200432689 /* FilterButtonView.swift in Sources */,
 				2DDBC4A02876D21200432689 /* ConversationsView.swift in Sources */,
