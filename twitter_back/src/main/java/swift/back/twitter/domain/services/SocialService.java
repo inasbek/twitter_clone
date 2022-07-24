@@ -1,6 +1,7 @@
 package swift.back.twitter.domain.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import swift.back.twitter.infrastructure.entities.social.Comment;
 import swift.back.twitter.infrastructure.entities.user.UserAccount;
@@ -48,5 +49,19 @@ public class SocialService {
 
     public List<Comment> getCommentsByUser(UserAccount user) {
         return this.socialRepository.getAllByUser(user);
+    }
+
+    public void retweetCommentbyID(UUID uuid) {
+        Comment comment = this.socialRepository.getReferenceById(uuid);
+        comment.setLikes(comment.getRetweet()+1);
+        this.socialRepository.save(comment);
+    }
+
+    public void commentAComment(Comment comment, UUID parentCommentId) {
+       Comment commentParent = this.socialRepository.getReferenceById(parentCommentId);
+       List<Comment> comments = commentParent.getComments();
+       comments.add(comment);
+       commentParent.setComments(comments);
+       this.socialRepository.save(commentParent);
     }
 }

@@ -1,4 +1,4 @@
-package swift.back.twitter.domain;
+package swift.back.twitter.domain.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -43,8 +43,8 @@ public class UserService {
         return  userAccount.get();
     }
 
-    public List<UserAccount> getUsersByUsername(String username, Pageable pagination){
-        return this.userRepository.findUserAccountsByUsernameContaining(username, pagination).getContent();
+    public UserAccount getUserByUsername(String username){
+        return this.userRepository.findUserAccountByUsername(username).get();
     }
 
     public void createUser(UserAccount userAccount, String email, String password, List<GrantedAuthority> roles) {

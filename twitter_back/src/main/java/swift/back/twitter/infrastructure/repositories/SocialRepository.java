@@ -11,6 +11,5 @@ import java.util.UUID;
 @Repository
 public interface SocialRepository extends JpaRepository<Comment, UUID> {
 
-
     List<Comment> getAllByUser(UserAccount user);
 }

@@ -7,9 +7,8 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 
 
-@Configuration
 @EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-@SpringBootApplication
+@SpringBootApplication()
 public class TwitterApplication {
 
 	public static void main(String[] args) {
