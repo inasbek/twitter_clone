@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 import swift.back.twitter.infrastructure.entities.user.User;
+import swift.back.twitter.infrastructure.entities.user.UserAccount;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -30,7 +31,7 @@ public class Comment {
 
     @ManyToOne
     @JoinColumn(name = "user_id",referencedColumnName = "id")
-    private User user;
+    private UserAccount user;
 
     @Column(name = "add_date", updatable = false)
     @Temporal(TemporalType.DATE)

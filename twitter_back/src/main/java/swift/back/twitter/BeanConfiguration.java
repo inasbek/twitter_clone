@@ -16,25 +16,25 @@ import javax.sql.DataSource;
 @Configuration
 public class BeanConfiguration {
 
-//    @Autowired private DataSource dataSource;
+    @Autowired private DataSource dataSource;
 //
-//    private final ApplicationContext context;
+    private final ApplicationContext context;
 //
-//    @Autowired
-//    public BeanConfiguration(ApplicationContext context) {
-//        this.context = context;
-//    }
+    @Autowired
+    public BeanConfiguration(ApplicationContext context) {
+        this.context = context;
+    }
 //
 //
-//    @Bean
-//    public JdbcUserDetailsManager jdbcUserDetailsManager() {
-//        return new JdbcUserDetailsManager(dataSource);
-//    }
+    @Bean
+    public JdbcUserDetailsManager jdbcUserDetailsManager() {
+        return new JdbcUserDetailsManager(dataSource);
+    }
 //
-//    @Bean
-//    public BCryptPasswordEncoder bcryptPasswordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
+    @Bean
+    public BCryptPasswordEncoder bcryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
 //
 //    public UserService userService() {
 //        return this.context.getBean(UserService.class);

@@ -3,6 +3,7 @@ package swift.back.twitter.exposition.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.web.bind.annotation.*;
 import swift.back.twitter.domain.services.UserService;
 import swift.back.twitter.exposition.models.AccountDTO;
@@ -35,7 +36,7 @@ public class UserController {
         user.setUsername(accountDTO.username());
         user.setProfil_image_url(accountDTO.profileImage());
         user.setInscriptionDate(Date.from(Instant.now()));
-       this.userService.createUser(user,accountDTO.email(),accountDTO.password(),null);
+       this.userService.createUser(user,accountDTO.email(),accountDTO.password(),List.of(new SimpleGrantedAuthority("USER")));
        return ResponseEntity.ok().build();
     }
 

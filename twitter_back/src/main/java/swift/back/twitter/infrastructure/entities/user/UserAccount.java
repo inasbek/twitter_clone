@@ -17,13 +17,6 @@ public class UserAccount {
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "id", updatable = false, nullable = false)
     private UUID id;
-    //let id: String
-    //let username: String
-    //let profileImageUrl: String
-    //let fullname: String
-    //let email: String
-    //var stats: UserStats
-    //var bio: String?
 
     @Column(name = "username") // -> the true username
     private String username;
@@ -36,13 +29,6 @@ public class UserAccount {
 
     @Column(name = "email", unique = true)
     private String email;
-
-//    @Column(name = "stats")
-//    private UserStats user_stats;
-//    struct UserStats {
-//        let followers: Int
-//        let following: Int
-//    }
 
     @Column(name = "bio", nullable = true)
     private String bio;

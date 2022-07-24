@@ -1,7 +1,6 @@
 package swift.back.twitter.domain.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import swift.back.twitter.infrastructure.entities.social.Comment;
 import swift.back.twitter.infrastructure.entities.user.UserAccount;

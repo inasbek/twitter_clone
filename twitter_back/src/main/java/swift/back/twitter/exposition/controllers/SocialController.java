@@ -14,8 +14,8 @@ import java.sql.Date;
 import java.time.Instant;
 import java.util.*;
 
-@RequestMapping(value = "/social")
-@Controller
+@RestController
+@RequestMapping(value = "social")
 public class SocialController {
 
     private final SocialService socialService;
@@ -87,7 +87,7 @@ public class SocialController {
         comment.setDate(Date.from(Instant.now()));
         comment.setId(UUID.randomUUID());
         comment.setTitle(request.title());
-        comment.setUser(request.user());
+        comment.setUser(null);
         comment.setRetweet(0);
         comment.setFile_link(request.filelink());
         comment.setLikes(0);
