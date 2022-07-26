@@ -17,8 +17,8 @@ struct ChatBubble: Shape {
     }
 }
 
-struct ChatBubble_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatBubble(isFromCurrentUser: false)
-    }
-}
+//struct ChatBubble_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatBubble(isFromCurrentUser: false)
+//    }
+//}

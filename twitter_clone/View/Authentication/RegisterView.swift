@@ -25,6 +25,7 @@ struct RegisterView: View {
     var body: some View {
         ZStack {
             VStack {
+   
                 Button(action: { showImagePicker.toggle() }, label: {
                     ZStack {
                         if let image = image {
@@ -51,6 +52,10 @@ struct RegisterView: View {
                 }).sheet(isPresented: $showImagePicker, onDismiss: loadImage, content: {
                     ImagePicker(image: $selectedUIImage)
                 })
+                
+                
+                
+                
                 
                 VStack(spacing: 20) {
                     CustomTextField(text: $email, placeholder: Text("Email"), imageName: "envelope")
@@ -117,8 +122,8 @@ struct RegisterView: View {
         .ignoresSafeArea()
     }
 }
-struct RegisterView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterView()
-    }
-}
+//struct RegisterView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        RegisterView()
+//    }
+//}

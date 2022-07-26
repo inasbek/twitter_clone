@@ -6,60 +6,45 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ChatView: View {
+    let user: User
+    @ObservedObject var viewModel: ChatViewModel
     @State var text : String = ""
+    
+    init(user: User){
+        self.user = user
+        self.viewModel = ChatViewModel(user:user)
+        
+    }
+    
     var body: some View {
         VStack{
             ScrollView{
                 VStack(alignment: .leading, spacing: 12){
-                    ForEach(MOCK_MESSAGES){ message in
-                      HStack{
-                          if message.isCurrentUser{
-                              Spacer()
-                                Text(message.messageText)
-                                  .padding()
-                                  .background(Color.blue)
-                                  .clipShape(ChatBubble(isFromCurrentUser: true))
-                                  .foregroundColor(.white)
-                                  .padding(.horizontal)
-                                  
-                          }else {
-                              HStack(alignment: .bottom){
-                                  Image(message.imageName)
-                                      .resizable()
-                                      .scaledToFill()
-                                      .frame(width: 40, height: 40)
-                                      .clipShape(Circle())
-                                  
-                                  Text(message.messageText)
-                                    .padding()
-                                    .background(Color(.systemGray5))
-                                    .clipShape(ChatBubble(isFromCurrentUser: false))
-                                    .foregroundColor(.black)
-                                    
-                                  
-                                  
-                              }
-                              .padding(.horizontal)
-                              Spacer()
-                                  
-                          }
-                          
-                        
-                        }
+                    ForEach(viewModel.messages){ message in
+                        MessageView(message: message)
                     }
                 }
-            }
-            MessageInputView(text: $text)
+            }.padding(.top)
+            MessageInputView(text: $text, action: senMessage)
                 .padding()
-        }
+                
+            
+            
+        }.navigationTitle(user.username)
     }
     
-}
-
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
+    func senMessage()
+    {
+        viewModel.sendMessage(text)
+        text = ""
     }
 }
+
+//struct ChatView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ChatView()
+//    }
+//}

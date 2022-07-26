@@ -10,15 +10,22 @@ import SwiftUI
 struct ConversationsView: View {
     @State var isShowigNewMessage = false
     @State var showChat = false
+    @State var user: User?
+    @ObservedObject var viewModel = ConversationsViewModel()
+    
     var body: some View {
-        ZStack(alignment: .bottomTrailing){
-            NavigationLink(destination: ChatView(),                    isActive: $showChat,
-                           label: {})
+       ZStack(alignment: .bottomTrailing){
+
+           
+           if let user = user {
+               NavigationLink(destination: LazyView(ChatView(user: user)),isActive: $showChat,
+                                          label: {})
+           }
             
             ScrollView{
                 VStack{
-                    ForEach(0..<10){ _ in
-                        NavigationLink(destination: ChatView(), label: { ConversationCell()
+                    ForEach(viewModel.recentMessages){message in
+                        NavigationLink(destination: LazyView(ChatView(user: message.user)), label: { ConversationCell(message: message)
                         })
                     }
                 }.padding()
@@ -37,14 +44,14 @@ struct ConversationsView: View {
             .clipShape(Circle())
             .padding()
             .sheet(isPresented: $isShowigNewMessage, content: {
-                NewMessageView(show: $isShowigNewMessage, startChat: $showChat)
+                NewMessageView(show: $isShowigNewMessage, startChat: $showChat, user: $user)
             })
         }
     }
-}
 
-struct ConversationsView_Previews: PreviewProvider {
-    static var previews: some View {
-        ConversationsView()
-    }
 }
+//struct ConversationsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ConversationsView()
+//    }
+//}

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ProfileActionButton: View {
-    let isCurrentUser: Bool
+    @ObservedObject var viewModel : ProfileViewModel
     
     var body: some View {
-        if isCurrentUser {
+        if viewModel.user.isCurrentUser {
             Button(action: {}, label: {
                 Text("Edit Profile")
                     .frame(width: 360, height: 40)
@@ -21,19 +21,27 @@ struct ProfileActionButton: View {
             .cornerRadius(20)
         }else {
             HStack {
-                Button(action: {}, label: {
-                    Text("Follow")
+                Button(action: {
+                    viewModel.user.isFollowed ? viewModel.unfollow() : viewModel.follow()
+                }, label: {
+                    Text(viewModel.user.isFollowed ? "Following" : "Follow")
                         .frame(width: 180, height: 40)
                         .background(Color.blue)
                         .foregroundColor(Color.white)
                 })
                 .cornerRadius(20)
                 
-                Button(action: {}, label: {
-                    Text("Message")
-                        .frame(width: 180, height: 40)
-                        .background(Color.purple)
-                        .foregroundColor(Color.white)
+//                Button(action: {}, label: {
+//                    Text("Message")
+//                        .frame(width: 180, height: 40)
+//                        .background(Color.purple)
+//                        .foregroundColor(Color.white)
+//                })
+                NavigationLink(destination: ChatView(user: viewModel.user), label: {
+                                        Text("Message")
+                                            .frame(width: 180, height: 40)
+                                            .background(Color.purple)
+                                            .foregroundColor(Color.white)
                 })
                 .cornerRadius(20)
             }
@@ -42,8 +50,8 @@ struct ProfileActionButton: View {
     }
 }
 
-struct ProfileActionButton_Previews: PreviewProvider {
-    static var previews: some View {
-        ProfileActionButton(isCurrentUser: false)
-    }
-}
+//struct ProfileActionButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProfileActionButton(isCurrentUser: false)
+//    }
+//}

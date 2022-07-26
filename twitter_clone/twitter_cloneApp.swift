@@ -30,7 +30,7 @@ struct twitter_cloneApp: App {
     WindowGroup {
         //LoginView()
 
-        
+        //TweetsView()
         ContentView().environmentObject(AuthViewModel.shared)
 
         

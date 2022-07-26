@@ -16,7 +16,10 @@ struct FeedView: View {
             ScrollView{
                 VStack{
                     ForEach(viewModel.tweets){ tweet in
-                        TweetCellView(tweet: tweet)
+                        NavigationLink(destination: TweetDetailView(tweet: tweet)){
+                            TweetCellView(tweet: tweet)
+
+                        }
                     }
                 }.padding()
             }
@@ -43,8 +46,8 @@ struct FeedView: View {
     }
 }
 
-struct FeedView_Previews: PreviewProvider {
-    static var previews: some View {
-        FeedView()
-    }
-}
+//struct FeedView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FeedView()
+//    }
+//}

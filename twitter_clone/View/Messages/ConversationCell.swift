@@ -6,22 +6,24 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ConversationCell: View {
+    let message: Message
     var body: some View {
       VStack {
         HStack(spacing: 12){
-            Image("back")
+            KFImage(URL(string: message.user.profileImageUrl))
                 .resizable()
                 .scaledToFill()
                 .clipped()
                 .frame(width: 56, height: 56)
                 .cornerRadius(28)
             VStack(alignment: .leading, spacing: 4) {
-                Text("issassou")
+                Text(message.user.fullname)
                     .font(.system(size: 14, weight: .semibold))
                 
-                Text("It s really so boring girl i don't like it att all... Want to see it ?")
+                Text(message.text)
                     .font(.system(size: 15))
                     .lineLimit(2)
             }
@@ -33,8 +35,8 @@ struct ConversationCell: View {
     }
 }
 
-struct ConversationCell_Previews: PreviewProvider {
-    static var previews: some View {
-        ConversationCell()
-    }
-}
+//struct ConversationCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ConversationCell()
+//    }
+//}
